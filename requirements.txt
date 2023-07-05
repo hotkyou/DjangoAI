@@ -1,0 +1,9 @@
+Django==4.1
+django-environ
+djangorestframework
+psycopg2
+pillow
+google-cloud-vision
+facenet-pytorch
+face_recognition
+requests
