@@ -11,8 +11,7 @@ DjangoでAIを使って顔認証や文字認識
 - [x] 顔一致比較APPをDjangoに適応
 - [x] API構築
 - [x] API出力
-- [] 文字識別APPとPOST情報比較
-- 
+- [ ] 文字識別APPとPOST情報比較
 
 ## ライブラリ
 
