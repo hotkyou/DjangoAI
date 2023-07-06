@@ -8,18 +8,19 @@ env = environ.Env()
 env.read_env('../.env')
 
 def CharacterRec(image):
-    key = env('CHARA_KEY')
 
+    os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = env('CHARA_KEY')
     result = []
     img = Image.open(image)
     img.save('material/images/image.jpg')
     image = '../material/images/image.jpg'
 
-    os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = key
     p = Path(__file__).parent / image
     client = vision.ImageAnnotatorClient()
+    
     with p.open('rb') as image_file:
         content = image_file.read()
+        
     try:
         image = vision.Image(content=content)
         response = client.text_detection(image=image)
@@ -28,6 +29,7 @@ def CharacterRec(image):
         os.remove('material/images/image.jpg')
     except:
         return None
+    
     for text in text:
         if '氏名'in text:
             result.append(text[text.find('氏名')+3:])
@@ -35,6 +37,7 @@ def CharacterRec(image):
             result.append(text[text.find('住所')+3:])
         elif '日生' in text:
             result.append(text[:text.find('生')])
-    print(len(result))
+            
     print(result)
+    
     return result
