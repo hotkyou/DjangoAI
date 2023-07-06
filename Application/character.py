@@ -20,10 +20,14 @@ def CharacterRec(image):
     client = vision.ImageAnnotatorClient()
     with p.open('rb') as image_file:
         content = image_file.read()
-    image = vision.Image(content=content)
-    response = client.text_detection(image=image)
-    text = response.text_annotations[0].description
-    text = text.splitlines()
+    try:
+        image = vision.Image(content=content)
+        response = client.text_detection(image=image)
+        text = response.text_annotations[0].description
+        text = text.splitlines()
+        os.remove('material/images/image.jpg')
+    except:
+        return None
     for text in text:
         if '氏名'in text:
             result.append(text[text.find('氏名')+3:])
@@ -31,6 +35,6 @@ def CharacterRec(image):
             result.append(text[text.find('住所')+3:])
         elif '日生' in text:
             result.append(text[:text.find('生')])
+    print(len(result))
     print(result)
-    os.remove('material/images/image.jpg')
     return result
