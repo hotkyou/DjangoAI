@@ -10,29 +10,25 @@ def FaceRec(image, picture):
     mtcnn = MTCNN(image_size=160, margin=10)
 
     # 切り取った顔を512個の数字にするAI
-    # 1回目の実行では学習済みのモデルをダウンロードしますので、少し時間かかります。
+    # 学習済みのモデルをダウンロード
     resnet = InceptionResnetV1(pretrained='vggface2').eval()
 
-    # 三人分の比較をします。
-    # 1つ目をカメラで取得した人として
-    # 2、3つ目を登録されている人とします。
     image_path1 = image
     image_path2 = picture
 
-    # (仮)カメラで取得した方
     # 画像データ取得
     img1 = Image.open(image_path1) 
-    # 顔データを160×160に切り抜き
-    img_cropped1 = mtcnn(img1)
-    # save_pathを指定すると、切り取った顔画像が確認できます。
-    #img_cropped1 = mtcnn(img1, save_path="cropped_img1.jpg")
-    # 切り抜いた顔データを512個の数字に
-    img_embedding1 = resnet(img_cropped1.unsqueeze(0))
-
-    # (仮)登録されたカメラと同じ人
-    img2 = Image.open(image_path2)
-    img_cropped2 = mtcnn(img2)
-    img_embedding2 = resnet(img_cropped2.unsqueeze(0))
+    try:
+        img_cropped1 = mtcnn(img1)
+        img_embedding1 = resnet(img_cropped1.unsqueeze(0))
+    except:
+        return None
+    img2 = Image.open(image_path2) 
+    try:
+        img_cropped2 = mtcnn(img2)
+        img_embedding2 = resnet(img_cropped2.unsqueeze(0))
+    except:
+        return ""
 
     # 類似度の関数
     def cos_similarity(p1, p2): 
