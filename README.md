@@ -10,7 +10,7 @@ DjangoでAIを使って顔認証や文字認識
 
 AI-based face recognition and image character recognition in Django ・Face matching comparison and API server
 
-##使用方法 Installation
+## 使用方法 Installation
 
 記述予定..
 
