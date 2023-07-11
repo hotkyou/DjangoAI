@@ -1,11 +1,13 @@
 # DjangoAI
 Webページ上でAIを使用してさまざまな機能を使うことができます。
+
 You can do many things with AI on web pages.
 
 ## アプリ説明 App Details
 
 DjangoでAIを使って顔認証や文字認識
 画像文字識別/顔一致比較&チーム制作APIサーバー
+
 AI-based face recognition and image character recognition in Django ・Face matching comparison and API server
 
 ##使用方法 Installation
