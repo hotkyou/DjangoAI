@@ -11,7 +11,7 @@ def diagnose(request):
         
         datas = json.loads(request.body)
         ACSFJ = checksex.AutoCheckFromJSON()
-        result = ACSFJ.autoCheck(datas)
+        result = ACSFJ.main(datas)
         print(result)
 
         return JsonResponse(result, safe=False)
