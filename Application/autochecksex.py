@@ -58,6 +58,6 @@ class AutoCheckFromJSON:
             self.Answer.append(datas[data])
         return self.Answer
     
-    def autoCheck(self, datas):
+    def main(self, datas):
         if self.checkAnswer(datas): return self.error
         return self.CheckSex.checkSex(self.createAnswer(datas))

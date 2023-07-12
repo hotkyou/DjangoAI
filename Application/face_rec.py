@@ -25,15 +25,23 @@ def ImgCrop(imagepicture):
 def cos_similarity(p1, p2): 
     return np.dot(p1, p2) / (np.linalg.norm(p1) * np.linalg.norm(p2))
 
+def createAPI(data):
+    if data == "img1":
+        return {"error": "データが不正です。", "reason": "身分証明書の顔に影がかかっているか、見切れているため認識できませんでした。"}
+    elif data == "img2":
+        return {"error": "データが不正です。", "reason": "現在の顔の画像に影がかかっているか、見切れているため認識できませんでした。"}
+    else:
+        return {"correct": "データが正常です。", "reason": data}
+        
 def FaceRec(image, picture):
     
     img1 = ImgCrop(image)
     img2 = ImgCrop(picture)
     
     if img1 == None:
-        return None
+        return createAPI("img1")
     if img2 == None:
-        return ""
+        return createAPI("img2")
 
     # 512個の数字にしたものはpytorchのtensorという型なので、numpyの方に変換
     p1 = img1.squeeze().to('cpu').detach().numpy().copy()
@@ -43,4 +51,4 @@ def FaceRec(image, picture):
     img1vs2 = str(cos_similarity(p1, p2))
     print("1つ目と2つ目の比較", img1vs2)
     
-    return img1vs2
+    return createAPI(img1vs2)
