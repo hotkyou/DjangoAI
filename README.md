@@ -12,7 +12,7 @@ AI-based face recognition and image character recognition in Django ・Face matc
 
 ## 使用方法 Installation
 
-[DEMO(未完成)](https://hotkyou.pythonanywhere.com/)
+[Demo](https://hotkyou.pythonanywhere.com/)
 
 
 
