@@ -2,7 +2,6 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from Application import character
 from Application import face_rec as FR
-from Application import checkpicture as CP
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from rest_framework import status
