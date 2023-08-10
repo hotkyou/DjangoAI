@@ -17,5 +17,5 @@ def diagnose(request):
         return JsonResponse(result, safe=False)
     
     else:
+        return render(request, 'diagnose/index.html')
         
-        return HttpResponse("ここをどこだと思っているんだあああ")

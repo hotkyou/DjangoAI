@@ -1,0 +1,42 @@
+.text-container {
+  padding: 20px;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+  font-family: 'Noto Sans', sans-serif;
+  margin-top: 40%;
+  text-align: center;
+  border-radius: 15px;
+  color: #FFFFFF;
+  background: linear-gradient(45deg, #B6E9FF, #EADAFF, #FEDEF3);
+}
+
+.text-bold {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 26px;
+}
+
+.text-regular {
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 21px;
+}
+
+.custom-button {
+  width: 180px;
+  height: 40px;
+  border: none;
+  background: linear-gradient(45deg, #B6E9FF, #EADAFF, #FEDEF3);
+  border-radius: 20px;
+  color: #FFFFFF;
+  font-family: 'Noto Sans', sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 21px;
+  cursor: pointer;
+  margin-top: 60px;
+  outline: none;
+}
+
+.custom-button:hover {
+  opacity: 0.8;
+}
