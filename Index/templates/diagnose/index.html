@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+{% load static %} {% csrf_token %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>診断</title>
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/diagnose.css' %}"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="row justify-content-center text-center">
+        <div class="col-lg-6 col-md-8 col-sm-10">
+          <div class="text-container">
+            <p class="text-bold">セクシュアリティ</p>
+            <p class="text-regular">
+              この診断ではあなたのセクシュアリティ。<br />
+              こころの性・ふるまう性<br />
+              性的指向・恋愛指向<br />
+              の4つから「あなたの性のあり方」を<br />
+              明らかにします。
+            </p>
+          </div>
+          <button class="custom-button">診断を始める</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
