@@ -7,6 +7,8 @@ You can do many things with AI on web pages.
 
 DjangoでAIを使って顔認証や文字認識
 画像文字識別/顔一致比較&チーム制作APIサーバー
+/ 画像文字識別/顔一致比較
+/diagnose 性別診断
 
 AI-based face recognition and image character recognition in Django ・Face matching comparison and API server
 
