@@ -40,3 +40,20 @@
 .custom-button:hover {
   opacity: 0.8;
 }
+
+
+.question-list{
+  display: none;
+}
+
+.prev-button {
+  display: none;
+}
+
+.next-button {
+  display: none;
+}
+
+.send-button {
+  display: none;
+}
