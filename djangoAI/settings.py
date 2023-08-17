@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'CharacterRecoAI.apps.CharacterrecoaiConfig',
     'Index.apps.IndexConfig',
     'rest_framework',
+    'diagnose.apps.DiagnoseConfig',
     
     'django.contrib.admin',
     'django.contrib.auth',

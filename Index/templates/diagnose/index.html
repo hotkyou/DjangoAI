@@ -18,6 +18,7 @@
       type="text/css"
       href="{% static 'css/diagnose.css' %}"
     />
+    <script type="text/javascript" src="{% static 'js/diagnose.js' %}"></script>
   </head>
 
   <body>
@@ -38,5 +39,30 @@
         </div>
       </div>
     </div>
+    <form method="POST">
+      <div class="question-list">
+        {% for questions, answers, formats in combined_data %}
+        <div class="question-{{ forloop.counter0 }}">
+          <div class="question">{{ questions.question }}</div>
+          <div class="answer">
+            {% for questionAnswer in answers %}
+            <input
+              type="radio"
+              id="{{ forloop.counter0 }}"
+              name="{{ forloop.parentloop.counter0 }}"
+              value="{{ forloop.counter0 }}"
+            />
+            <label for="{{ forloop.counter0 }}">
+              {{ questionAnswer.answer }}
+            </label>
+            {% endfor %}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      <button class="send-button" id="send-button">送信</button>
+      <a class="next-button" id="next-button">次へ</a>
+      <a class="prev-button" id="prev-button">前へ</a>
+    </form>
   </body>
 </html>
