@@ -1,3 +1,17 @@
+.alert {
+  position: fixed;
+  top: 20px; 
+  right: -300px; /* 初期状態でビューの外に配置 */
+  width: 250px;
+  padding: 10px 20px;
+  background-color: #ff9800;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+  transition: right 0.3s ease-in-out;
+  z-index: 1000;
+}
+
 .text-container {
   padding: 20px;
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
@@ -41,19 +55,125 @@
   opacity: 0.8;
 }
 
-
 .question-list{
   display: none;
+  margin-top: 20%;
+}
+
+.question-list .question {
+  background-image: linear-gradient(to left, #9AE5E1, #F4BCF7);
+  color: transparent; /* 背景のグラデーションを見せるために透明にする */
+  -webkit-background-clip: text; /* Webkitブラウザ用 */
+  background-clip: text;
+  font-size: 30px;
+}
+
+.question-button {
+  margin-left: 30%;
 }
 
 .prev-button {
   display: none;
+  width: 180px;
+  height: 40px;
+  border: none;
+  background: linear-gradient(45deg, #B6E9FF, #EADAFF, #FEDEF3);
+  border-radius: 20px;
+  color: #FFFFFF;
+  font-family: 'Noto Sans', sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 21px;
+  cursor: pointer;
+  margin-top: 60px;
+  outline: none;
 }
 
 .next-button {
   display: none;
+  width: 180px;
+  height: 40px;
+  border: none;
+  background: linear-gradient(45deg, #B6E9FF, #EADAFF, #FEDEF3);
+  border-radius: 20px;
+  color: #FFFFFF;
+  font-family: 'Noto Sans', sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 21px;
+  cursor: pointer;
+  margin-top: 60px;
+  outline: none;
+  align-items: center;
 }
 
 .send-button {
   display: none;
+  width: 180px;
+  height: 40px;
+  border: none;
+  background: linear-gradient(45deg, #B6E9FF, #EADAFF, #FEDEF3);
+  border-radius: 20px;
+  color: #FFFFFF;
+  font-family: 'Noto Sans', sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 21px;
+  cursor: pointer;
+  margin-top: 60px;
+  outline: none;
+  justify-content: center;
+  align-items: center; 
+}
+
+.sent-button {
+  display: none;
+}
+
+.answer {
+  margin-top: 20%;
+}
+
+/* ラジオボタンを非表示にします */
+.answer input[type="radio"] {
+  display: none;
+}
+
+/* 選択されていない時のスタイル */
+.answer label {
+  position: relative;
+  padding-left: 50px; /* ラベルのテキストを右に移動させ、ラジオボタンのカスタムスタイルにスペースを作成します */
+  display: inline-block;
+  margin-right: 10px; /* 必要に応じてマージンを調整 */
+}
+
+.answer label:before {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 42px;
+  height: 42px;
+  border: 2px dashed #8AD8D4;
+  border-radius: 50%; /* 丸い形状を作成するため */
+  box-sizing: border-box;
+}
+
+/* 選択された時のスタイル */
+.answer input[type="radio"]:checked + label:before {
+  background: #8AD8D4;
+  border: none;
+}
+
+.answer input[type="radio"]:checked + label:after {
+  content: '';
+  position: absolute;
+  left: 8px; /* チェックマークの位置を中央に調整 */
+  top: 50%;
+  transform: translateY(-50%);
+  width: 26.73px;
+  height: 15.27px;
+  background: url('path_to_your_checkmark_image.png') no-repeat center center; /* チェックマークの画像へのパスを指定 */
 }
