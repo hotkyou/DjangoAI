@@ -1,0 +1,53 @@
+body {
+  font-family: 'Noto Sans', sans-serif;
+  position: relative;
+}
+
+.title {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 25px;
+  background: linear-gradient(117.67deg, #FEDEF3 4.21%, #EADAFF 51.64%, #B6E9FF 99.07%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.card-button {
+  width: 80px;
+  height: 80px;
+  background: #FFFFFF;
+  box-shadow: 1px 2px 4px rgba(238, 238, 238, 0.6);
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#identification-documents {
+  background-image: url('https://i.imgur.com/vHTgxFP.png');
+}
+
+#driver-license {
+  background-image: url('https://i.imgur.com/Z1B22TC.png');
+}
+
+#report-card {
+  background-image: url('https://i.imgur.com/vLABesp.png');
+}
+
+.card-description {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+  color: #7F7F7F;
+  margin-top: 10px;
+}
+
+.button-group {
+  display: inline-block;
+}
