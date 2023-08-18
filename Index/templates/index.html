@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{% comment %} <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -12,4 +12,45 @@
 </body>
 
 </html>
-<!-- end document-->
+<!-- end document--> {% endcomment %}
+
+{% load static %} {% csrf_token %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <script type="text/javascript" src="{% static 'js/index.js' %}"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="container d-flex justify-content-center align-items-center vh-100">
+        <div class="wrapper text-center">
+            <h1 class="title mb-5">本人確認方法の選択</h1>
+
+            <div class="d-flex justify-content-center mb-4">
+                <form method="post" id="buttonForm">
+                    <input type="hidden" name="buttonPressed" id="buttonInput">
+                    <div class="button-group mx-2 text-center">
+                        <button class="card-button" id="identification-documents" onclick="setButtonValue('identification-documents')"></button>
+                        <div class="card-description">個人番号カード</div>
+                    </div>
+                    <div class="button-group mx-2 text-center">
+                        <button class="card-button" id="driver-license" onclick="setButtonValue('driver-license')"></button>
+                        <div class="card-description">運転免許証</div>
+                    </div>
+                    <div class="button-group mx-2 text-center">
+                        <button class="card-button" id="report-card" onclick="setButtonValue('report-card')"></button>
+                        <div class="card-description">学生証 <br> 健康保険証</div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

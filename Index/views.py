@@ -13,19 +13,31 @@ def index(request):
         return render(request, 'index.html')
     
     else:
-        if request.POST.get('image') == '' or request.POST.get('picture') == '':
-            data = {'error': '画像を選択してください。'}
-            return Response(data, status=status.HTTP_411_LENGTH_REQUIRED)
+        if request.POST.get('buttonPressed') == 'identification-documents':
+            print(request.POST)
+            return render(request, 'identification-documents.html')
+        elif request.POST.get('buttonPressed') == 'driver-license':
+            print(request.POST)
+            return render(request, 'driver-license.html')
+        elif request.POST.get('buttonPressed') == 'report-card':
+            print(request.POST)
+            return render(request, 'report-card.html')
+        else:
+            print(request.POST)
+            return render(request, 'index.html')
+        # if request.POST.get('image') == '' or request.POST.get('picture') == '':
+        #     data = {'error': '画像を選択してください。'}
+        #     return Response(data, status=status.HTTP_411_LENGTH_REQUIRED)
         
-        image = request.FILES['image']
-        picture = request.FILES['picture']
+        # image = request.FILES['image']
+        # picture = request.FILES['picture']
         
-        CR = character.CreateAPI()
-        FaceRec = FR.FaceRec(image, picture)
-        Character = CR.main(image)
+        # CR = character.CreateAPI()
+        # FaceRec = FR.FaceRec(image, picture)
+        # Character = CR.main(image)
         
-        data = {}
-        data["FaceRec"] = FaceRec
-        data["Character"] = Character
+        # data = {}
+        # data["FaceRec"] = FaceRec
+        # data["Character"] = Character
         
-        return Response(data)
+        # return Response(data)
